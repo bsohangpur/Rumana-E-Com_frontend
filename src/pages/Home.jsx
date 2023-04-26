@@ -1,10 +1,14 @@
 import React from 'react';
+import { Hero, AboutHero, ContactHero } from '../components';
+
+
 
 const Home = () => {
   return (
     <div>
-      {/* <Navbar/>
-      <Footer/> */}
+      <Hero />
+      <AboutHero />
+      <ContactHero/>
     </div>
   )
 }

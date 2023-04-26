@@ -1,33 +1,27 @@
-import React from 'react';
-import {
-  Box,
-  Flex,
-  Spacer,
-  useColorModeValue,
-  Link,
-} from '@chakra-ui/react';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Box, Flex, Spacer, useColorModeValue, Link } from "@chakra-ui/react";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 function Footer() {
-  const linkColor = useColorModeValue('gray.600', 'gray.400');
-  const currentYear = new Date().getFullYear()
+  const linkColor = useColorModeValue("gray.600", "gray.400");
+  const currentYear = new Date().getFullYear();
 
   const socialLinks = [
     {
-      label: 'Github',
-      href: 'https://github.com/',
-      icon: <FaGithub color={linkColor} />,
+      label: "Instagram",
+      href: "https://instagram.com/zrumana",
+      icon: <FaInstagram color={linkColor} />,
     },
     {
-      label: 'LinkedIn',
-      href: 'https://www.linkedin.com/',
-      icon: <FaLinkedin color={linkColor} />,
+      label: "Facebook",
+      href: "https://www.facebook.com/",
+      icon: <FaFacebook color={linkColor} />,
     },
     {
-      label: 'Twitter',
-      href: 'https://twitter.com/',
-      icon: <FaTwitter color={linkColor} />,
+      label: "Whatsapp",
+      href: "https://whatsapp.com/",
+      icon: <FaWhatsapp color={linkColor} />,
     },
   ];
 
@@ -36,26 +30,27 @@ function Footer() {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2, duration: 0.5 }}
-      className=' bg-gray-800 text-slate-50'
+      className=" bg-gray-800 text-slate-50"
     >
       <Flex
         align="center"
         justify="space-between"
         wrap="wrap"
         paddingY="2rem"
-        paddingX={{ base: '1rem', md: '1.5rem', lg: '2rem' }}
+        paddingX={{ base: "2rem", md: "5rem", lg: "8rem" }}
       >
-        <Box fontSize={{ base: 'sm', md: 'md' }} fontWeight="medium">
-        ©{currentYear} All rights reserved to Rumana Products
+        <Box fontSize={{ base: "sm", md: "md" }} fontWeight="medium">
+          ©{currentYear} All rights reserved to Rumana Products
         </Box>
         <Spacer />
         <Flex align="center">
-          <Box fontSize={{ base: 'sm', md: 'md' }} fontWeight="medium" mr={4}>
+          <Box fontSize={{ base: "sm", md: "md" }} fontWeight="medium" mr={4}>
             Connect with us:
           </Box>
           {socialLinks.map((link) => (
             <Box key={link.href} mr={4}>
               <Link
+                fontSize={20}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
