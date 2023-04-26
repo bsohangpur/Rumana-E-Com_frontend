@@ -15,14 +15,13 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 
 function ContactHero() {
   return (
-    <Box py={{ base: 6, lg: 12 }} bg="gray.100">
+    <Box py={{ base: 6, lg: 12 }}>
       <Heading
         as="h2"
         textAlign="center"
         fontWeight="extrabold"
         mb={{ base: 4, lg: 8 }}
         fontSize={{ base: '3xl', md: '4xl' }}
-        color="gray.800"
       >
         Contact Us
       </Heading>
@@ -43,7 +42,7 @@ function ContactHero() {
               <Icon as={FaEnvelope} color="gray.500" boxSize="20px" mr={2} />
               <Box>
                 <Text fontWeight="bold">Email</Text>
-                <Text color="gray.500">hello@rumanazainab.com</Text>
+                <Text color="gray.500">contact@rumanazainab.com</Text>
               </Box>
             </Box>
             <Box mb={4} display="flex" alignItems="center">
@@ -71,7 +70,7 @@ function ContactHero() {
             <form>
               <FormControl mb={4}>
                 <FormLabel htmlFor="name">Name</FormLabel>
-                <Input type="text" id="name" name="name" required />
+                <Input type="text" id="name" name="name" placeholder="Name" required />
               </FormControl>
               <FormControl mb={4}>
                 <FormLabel htmlFor="email">Email</FormLabel>

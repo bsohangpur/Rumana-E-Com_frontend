@@ -40,7 +40,7 @@ function Footer() {
         paddingX={{ base: "2rem", md: "5rem", lg: "8rem" }}
       >
         <Box fontSize={{ base: "sm", md: "md" }} fontWeight="medium">
-          ©{currentYear} All rights reserved to Rumana Products
+          ©{currentYear} All rights reserved to Rumana Zainab Products
         </Box>
         <Spacer />
         <Flex align="center">

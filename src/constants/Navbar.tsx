@@ -34,7 +34,7 @@ function Navbar() {
       <Flex align="center">
         <Link to="/">
           <Box fontWeight="bold" fontSize="xl">
-            Rumana
+            Rumana Zainab
           </Box>
         </Link>
       </Flex>
