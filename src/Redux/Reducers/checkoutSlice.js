@@ -12,7 +12,7 @@ const initialState = {
   data: [],
 };
 
-const url = "http://191.101.229.240/api/checkout/";
+const url = "https://rumanazainab.com/api/checkout/";
 
 export const checkoutSlice = createSlice({
   name: "checkout",
