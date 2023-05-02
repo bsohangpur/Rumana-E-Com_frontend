@@ -15,8 +15,11 @@ export const cartSlice = createSlice({
     setHandleClick(state, action) {
       state.toggle = action.payload;
     },
+    clearCart(state, action){
+      state.product = []
+    }
   },
 });
 
-export const { setProduct, setHandleClick } = cartSlice.actions;
+export const { setProduct, setHandleClick, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

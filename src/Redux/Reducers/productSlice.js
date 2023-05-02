@@ -13,7 +13,7 @@ const initialState = {
     product: [],
 }
 
-// const url = 'https://fakestoreapi.com/products';
+// const url = 'http://191.101.229.240/api/products';
 
 export const productSlice = createSlice({
     name: 'product',
@@ -33,6 +33,7 @@ export function FetchProduct() {
         try {
             dispatch(setStatus(STATUS.loading))
             // const res = await axios.get(url);
+            // dispatch(setProduct(res.data))
             dispatch(setProduct(product))
             dispatch(setStatus(STATUS.idle))
         }

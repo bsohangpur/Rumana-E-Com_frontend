@@ -24,9 +24,9 @@ function AboutHero() {
             you with any gifts box enquire to ensure you are satisfied with the
             final product you receive and our customer service makes sure you
             feel satisfied.
-            <Text className=" text-lg font-semibold">
+            <span className=" text-lg font-semibold">
               That’s the magic of Rumana Zaniab.
-            </Text>
+            </span>
           </Text>
         </Box>
         <Box flex={1}>

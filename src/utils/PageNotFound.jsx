@@ -10,7 +10,7 @@ function PageNotFound() {
   };
 
   return (
-    <Box textAlign="center" py={{ base: 12, lg: 24 }} bg="gray.100">
+    <Box h='100vh' className='flex justify-center items-center flex-col' textAlign="center" py={{ base: 12, lg: 24 }} bg="gray.100">
       <Heading
         as="h2"
         fontWeight="extrabold"

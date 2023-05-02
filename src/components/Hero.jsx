@@ -14,6 +14,7 @@ import { useSelector } from 'react-redux';
 const Hero = () => {
   const {product} =  useSelector(state=>state.product);
   const data = product && product.slice(0,3);
+  console.log(data)
 
   return (
     <Box position="relative" >

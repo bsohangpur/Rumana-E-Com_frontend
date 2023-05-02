@@ -15,8 +15,8 @@ const Product = ({ data }) => {
         <Image
           maxW="100%"
           maxH="40rem"
-          src={data.image[0]}
-          alt={data.image[0]}
+          src={data.image}
+          alt={data.image}
           borderRadius="lg"
         />
         <Box
@@ -39,9 +39,7 @@ const Product = ({ data }) => {
           transition="opacity 0.3s ease-in-out"
           _hover={{ opacity: 1 }}
         >
-          <Text>
-            <CropText text={data.description} />
-          </Text>
+          <CropText text={data.description} />
         </Box>
       </Box>
       <Text maxW="300px" fontWeight="bold" fontSize="lg" mb={2}>

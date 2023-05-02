@@ -28,7 +28,7 @@ export const product = [
     price: 15,
     description: "Your perfect pack for everyday use.",
     category: "candle",
-    image: [pic_5],
+    image: pic_5,
     rating: {
       rate: 3.9,
       count: 120,
@@ -40,7 +40,7 @@ export const product = [
     price: 20,
     description: "Your perfect pack for everyday use.",
     category: "candle",
-    image: [pic_6, pic_8],
+    image: pic_6,
     rating: {
       rate: 3.9,
       count: 120,
@@ -52,7 +52,7 @@ export const product = [
     price: 25,
     description: "Your perfect pack for everyday use.",
     category: "candle",
-    image: [pic_17, pic_18],
+    image: pic_17,
     rating: {
       rate: 3.9,
       count: 120,
@@ -64,7 +64,7 @@ export const product = [
     price: 20,
     description: "Your perfect pack for everyday use.",
     category: "candle",
-    image: [pic_1, pic_2],
+    image: pic_1,
     rating: {
       rate: 3.9,
       count: 120,
@@ -76,7 +76,7 @@ export const product = [
     price: 10,
     description: "Your perfect pack for everyday use.",
     category: "candle",
-    image: [pic_3, pic_4],
+    image: pic_3,
     rating: {
       rate: 3.9,
       count: 120,
@@ -89,7 +89,7 @@ export const product = [
     price: 15,
     description: "Your perfect pack for everyday use.",
     category: "candle",
-    image: [pic_10, pic_11],
+    image: pic_10,
     rating: {
       rate: 3.9,
       count: 120,
@@ -102,7 +102,7 @@ export const product = [
     price: 25,
     description: "Your perfect pack for everyday use.",
     category: "candle",
-    image: [pic_19, pic_20],
+    image: pic_19,
     rating: {
       rate: 3.9,
       count: 120,
