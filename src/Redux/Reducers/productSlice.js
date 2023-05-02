@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import axios from 'axios';
-import {product} from '../../Data/data'
+import axios from 'axios';
+// import {product} from '../../Data/data'
 
 const STATUS = {
     idle:'idle',
@@ -13,7 +13,7 @@ const initialState = {
     product: [],
 }
 
-// const url = 'http://191.101.229.240/api/products';
+const url = 'http://191.101.229.240/api/products';
 
 export const productSlice = createSlice({
     name: 'product',
@@ -32,9 +32,9 @@ export function FetchProduct() {
     return async function fetchProduct(dispatch) {
         try {
             dispatch(setStatus(STATUS.loading))
-            // const res = await axios.get(url);
-            // dispatch(setProduct(res.data))
-            dispatch(setProduct(product))
+            const res = await axios.get(url);
+            dispatch(setProduct(res.data))
+            // dispatch(setProduct(product))
             dispatch(setStatus(STATUS.idle))
         }
         catch (error) {
