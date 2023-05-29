@@ -12,7 +12,7 @@ const initialState = {
   data: [],
 };
 
-const url = "https://rumanazainab.com/api/checkout/";
+const url = "https://api.rumanazainab.com/api/checkout/";
 
 export const checkoutSlice = createSlice({
   name: "checkout",

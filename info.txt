@@ -1,0 +1,2 @@
+main hostinger vps ip 191.101.229.240
+main hostinger hosting ip 217.21.94.36

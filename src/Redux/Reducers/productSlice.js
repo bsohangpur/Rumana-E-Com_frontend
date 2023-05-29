@@ -13,7 +13,7 @@ const initialState = {
     product: [],
 }
 
-const url = 'https://rumanazainab.com/api/products';
+const url = 'https://api.rumanazainab.com/api/products';
 
 export const productSlice = createSlice({
     name: 'product',
