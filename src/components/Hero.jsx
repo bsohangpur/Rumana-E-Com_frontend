@@ -1,89 +1,67 @@
-import React from 'react';
-import {
-  Box,
-  Flex,
-  Heading,
-  Text,
-  Button,
-  useColorModeValue,
-  ScaleFade,
-} from '@chakra-ui/react';
-import { Product } from '../components';
-import { useSelector } from 'react-redux';
+import React from "react";
+import { Box, Heading, Text, Button } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import HeroProduct from "./HeroProduct";
+import { Link } from "react-router-dom";
 
-const Hero = () => {
-  const {product} =  useSelector(state=>state.product);
-  const data = product && product.slice(0,3);
-  console.log(data)
-
+const Hero = ({ products }) => {
   return (
-    <Box position="relative" >
+    <Box>
       <Box
-        bg={useColorModeValue('whiteAlpha.900', 'blackAlpha.700')}
-        w="full"
-        overflow="hidden"
+        py={{base:10, md:15 , lg:20}}
+        bg="gray.100"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
       >
-        <Box
-          w={{ base: '80%', lg: '50%' }}
-          maxW="lg"
-          mx="auto"
-          mb={{ base: 8, lg: 0 }}
-          boxShadow="2xl"
-          display='none'
-        >
-          <ScaleFade in={true}>
-            <Box my={6} bg="orange.400" p={2}>
-              <Text fontWeight="bold" color="white">
-                Get 20% discount on all products! Use code: DISCOUNT20
-              </Text>
-            </Box>
-          </ScaleFade>
-        </Box>
-
-        {/* Latest Products */}
-        <Flex
-          direction={{ base: 'column', lg: 'row' }}
-          justify={'center'}
-          align={{ base: 'center', lg: 'flex-end' }}
-          mx="auto"
-          px={{ base: 6, lg: 0 }}
-          w="full"
-          bg={useColorModeValue('whiteAlpha.900', 'blackAlpha.700')}
-          py={4}
-        >
-          <Box
-            mb={{ base: 8, lg: 0 }}
-            textAlign={'center'}
+        <Box maxW="500px" textAlign="center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
           >
-            <Heading
-              as="h1"
-              fontSize={{ base: '3xl', lg: '5xl' }}
-              fontWeight="bold"
-              mb={4}
-              lineHeight="shorter"
-              className=' capitalize'
-              color={useColorModeValue('gray.800', 'white')}
-            >
-              Discover <br />
-              the latest products
+            <Heading as="h1" size="2xl" mb={4}>
+              Find the Perfect Gift
             </Heading>
-            <Button mx='auto' colorScheme="orange" size="lg" mb={8}>
-              Shop now
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+          >
+            <Text fontSize="xl" mb={6}>
+              Explore our wide range of gift products for any occasion.
+            </Text>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.5 }}
+          >
+            <Button as={Link} to='/shop' colorScheme="teal" size="lg">
+              Shop Now
             </Button>
-            <Flex justifyContent='center' flexFlow='wrap' gap={8} mx={6}>
-            {
-              data.map((product)=>{
-                return <Product key={product.id} data={product} />
-              })
-            }
-             
-
-            </Flex>
-          </Box>
-        </Flex>
+          </motion.div>
+        </Box>
+      </Box>
+      <Box
+        bg="gray.100"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Box textAlign="center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <HeroProduct products={products} />
+          </motion.div>
+        </Box>
       </Box>
     </Box>
   );
 };
 
-export default Hero
+export default Hero;
