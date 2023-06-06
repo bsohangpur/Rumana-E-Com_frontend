@@ -16,7 +16,7 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
 function ContactHero() {
   return (
-    <Box bg={useColorModeValue("gray.100", "gray.900")} py={{ base: 6, lg: 12 }}>
+    <Box px={{base:10, md:0}} bg={useColorModeValue("gray.100", "gray.900")} py={{ base: 6, lg: 12 }}>
       <Heading
         as="h2"
         textAlign="center"
@@ -96,20 +96,21 @@ function ContactHero() {
                   id="name"
                   name="name"
                   placeholder="Name"
+                  border="1px solid"
                   required
                 />
               </FormControl>
               <FormControl mb={4}>
                 <FormLabel htmlFor="email">Email</FormLabel>
-                <Input type="email" placeholder="Email" />
+                <Input type="email" border="1px solid" placeholder="Email" />
               </FormControl>
               <FormControl mb={4}>
                 <FormLabel htmlFor="phone">Phone</FormLabel>
-                <Input type="number" placeholder="Subject" />
+                <Input type="number" border="1px solid" placeholder="Subject" />
               </FormControl>
               <FormControl mb={4}>
                 <FormLabel htmlFor="message">Message</FormLabel>
-                <Textarea placeholder="Message" />
+                <Textarea border="1px solid" placeholder="Message" />
               </FormControl>
               <Button type="submit" colorScheme="orange">
                 Send Message
