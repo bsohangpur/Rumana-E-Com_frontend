@@ -13,11 +13,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { useDispatch, useSelector } from "react-redux";
-import addProductToCart from './addProductToCart'
+import addProductToCart from "./addProductToCart";
 
 export default function ProductDetail({ product }) {
   const dispatch = useDispatch();
   const { product: productData } = useSelector((state) => state.cart);
+  const { loading } = useSelector((state) => state.product);
   const toast = useToast();
 
   return (
@@ -25,12 +26,16 @@ export default function ProductDetail({ product }) {
       <Box w="80%">
         <Flex justify="space-evenly" flexWrap="wrap" align="center">
           <Box className="h-fit">
-            <Swiper pagination={true} modules={[Pagination]} className="w-96">
+            <Swiper
+              pagination={true}
+              modules={[Pagination]}
+              className="w-96 z-0"
+            >
               {product &&
                 product.image &&
                 product.image.map((image, index) => (
-                  <SwiperSlide className="w-96 h-96" key={index}>
-                    <Image src={image.image} alt={product.name} />
+                  <SwiperSlide className="w-96" key={index}>
+                    <Image className="" src={image.image} alt={image.name} />
                   </SwiperSlide>
                 ))}
             </Swiper>
@@ -45,8 +50,8 @@ export default function ProductDetail({ product }) {
                 Price: ${product.price}
               </Text>
               <Box mt={4}>
-                <Text>Rating: {product.rating}</Text>
-                <Text>Reviews: {product.reviews}</Text>
+                <Text>Rating: {product.rating ? product.rating : 0}</Text>
+                <Text>Reviews: {product.reviews ? product.reviews : 0}</Text>
               </Box>
             </Box>
           </Box>
@@ -58,6 +63,7 @@ export default function ProductDetail({ product }) {
             }
             variant="solid"
             colorScheme="teal"
+            isDisabled={loading}
             w="80%"
             h={12}
           >

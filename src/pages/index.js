@@ -3,6 +3,7 @@ import Shop from './Shop';
 import Contact from './Contact';       
 import About from './About'; 
 import SingleProductPage from './SingleProductPage';
+import FAQPage from './FAQPage';
 
 export {
     Home,
@@ -10,5 +11,6 @@ export {
     Contact,
     About,
     SingleProductPage,
+    FAQPage,
     
 }

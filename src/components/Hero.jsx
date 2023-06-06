@@ -1,5 +1,11 @@
 import React from "react";
-import { Box, Heading, Text, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Text,
+  Button,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import HeroProduct from "./HeroProduct";
 import { Link } from "react-router-dom";
@@ -8,8 +14,8 @@ const Hero = ({ products }) => {
   return (
     <Box>
       <Box
-        py={{base:10, md:15 , lg:20}}
-        bg="gray.100"
+        py={{ base: 10, md: 15, lg: 20 }}
+        bg={useColorModeValue("gray.100", "gray.900")}
         display="flex"
         justifyContent="center"
         alignItems="center"
@@ -38,14 +44,14 @@ const Hero = ({ products }) => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.5 }}
           >
-            <Button as={Link} to='/shop' colorScheme="teal" size="lg">
+            <Button as={Link} to="/shop" colorScheme="teal" size="lg">
               Shop Now
             </Button>
           </motion.div>
         </Box>
       </Box>
       <Box
-        bg="gray.100"
+        bg={useColorModeValue("gray.100", "gray.900")}
         display="flex"
         justifyContent="center"
         alignItems="center"
@@ -56,6 +62,9 @@ const Hero = ({ products }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
+            <Heading as="h2" size="lg" mb={4}>
+              Most Popular Products
+            </Heading>
             <HeroProduct products={products} />
           </motion.div>
         </Box>

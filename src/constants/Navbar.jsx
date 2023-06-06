@@ -13,6 +13,7 @@ import { FaSun, FaMoon, FaTimes } from "react-icons/fa"; // Add FaTimes icon for
 import { Link } from "react-router-dom";
 import { Cart } from "../components";
 import { useSelector } from "react-redux";
+import { links } from "../Data/data";
 
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -40,40 +41,26 @@ function Navbar() {
       </Flex>
       <Spacer />
       <Flex align="center" display={{ base: "none", md: "flex" }}>
-        <Link to="/shop">
-          <Box fontSize="lg" fontWeight="medium" mr={6}>
-            Shop
-          </Box>
-        </Link>
-        <Link to="/about">
-          <Box fontSize="lg" fontWeight="medium" mr={6}>
-            About
-          </Box>
-        </Link>
-        <Link to="/contact">
-          <Box fontSize="lg" fontWeight="medium" mr={6}>
-            Contact
-          </Box>
-        </Link>
-        <Link to="/faq">
-          <Box fontSize="lg" fontWeight="medium">
-            FAQ
-          </Box>
-        </Link>
+        {links.map((link) => (
+          <Link key={link.name} to={link.url}>
+            <Box fontSize="lg" fontWeight="medium" mr={6}>
+              {link.name}
+            </Box>
+          </Link>
+        ))}
       </Flex>
-      <Flex mx={6} align="center">
+      <Flex mx={6} gap={2} align="center">
         <IconButton
           aria-label="Toggle color mode"
           icon={colorMode === "light" ? <FaMoon /> : <FaSun />}
           variant="ghost"
-          mr={4}
           onClick={toggleColorMode}
         />
         <IconButton
           aria-label="Open menu"
           icon={<FiMenu />}
           variant="ghost"
-          display={{ base: "block", md: "none" }}
+          display={{ base: "flex", md: "none" }}
           onClick={onOpen}
         />
         <Box mr={4}>
@@ -106,26 +93,13 @@ function Navbar() {
           />
         </Flex>
         <Flex direction="column" align="center">
-          <Link to="/shop">
-            <Box fontSize="lg" fontWeight="medium" mb={4}>
-              Shop
-            </Box>
-          </Link>
-          <Link to="/about">
-            <Box fontSize="lg" fontWeight="medium" mb={4}>
-              About
-            </Box>
-          </Link>
-          <Link to="/contact">
-            <Box fontSize="lg" fontWeight="medium" mb={4}>
-              Contact
-            </Box>
-          </Link>
-          <Link to="/faq">
-            <Box fontSize="lg" fontWeight="medium" mb={4}>
-              FAQ
-            </Box>
-          </Link>
+          {links.map((link) => (
+            <Link onClick={onClose} key={link.name} to={link.url}>
+              <Box fontSize="lg" fontWeight="medium" mb={4}>
+                {link.name}
+              </Box>
+            </Link>
+          ))}
           <IconButton
             aria-label="Toggle color mode"
             icon={colorMode === "light" ? <FaMoon /> : <FaSun />}

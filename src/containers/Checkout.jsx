@@ -22,6 +22,7 @@ import { clearCart } from "../Redux/Reducers/cartSlice";
 const Checkout = () => {
   const dispatch = useDispatch();
   const { status } = useSelector((state) => state.checkout);
+  const { product } = useSelector((state) => state.cart);
   const [isSubmit, setIsSubmit] = useState(false);
   const navigation = useNavigate();
 
@@ -72,6 +73,7 @@ const Checkout = () => {
       state: values.address.state,
       country: values.address.country,
       note: values.note,
+      products: product.map((item) => item.id),
     };
     dispatch(SendCheckoutData(data));
     setIsSubmit(true);
@@ -81,7 +83,7 @@ const Checkout = () => {
   if (status === "idle")
     setInterval(() => {
       navigation("/");
-      navigation(0)
+      navigation(0);
     }, 3000);
 
   return (

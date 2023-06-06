@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 import { Product } from "../components";
 import HeroProduct from "../components/HeroProduct";
@@ -32,7 +32,8 @@ function ShopMain({ toggle, products }) {
   };
 
   return (
-    <Box w={toggle ? "75%" : "100%"} className="flex" pb={12}>
+    <Box w={toggle ? "75%" : "100%"} className="" pb={12}>
+      <Heading ml={{base:4, md:20}}>Shop</Heading>
       <Flex
         direction={{ base: "column", lg: "row" }}
         justifyContent="center"
@@ -40,6 +41,7 @@ function ShopMain({ toggle, products }) {
         // maxW={{ base: '100%', lg: '80%', xl: '1200px' }}
         mx="auto"
       >
+        
         {/* Main section with products and pagination */}
         <Box w={"100%"}>
           {/* Product grid */}
@@ -49,7 +51,8 @@ function ShopMain({ toggle, products }) {
             gap={4}
             mb={{ base: 8, lg: 12 }}
           >
-            <Box shadow='lg' bg={"gray.100"} p={12}>
+            <Box p={12}>
+              
               <HeroProduct products={currentProducts} />
             </Box>
           </Flex>

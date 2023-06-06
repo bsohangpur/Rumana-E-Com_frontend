@@ -13,6 +13,7 @@ const initialState = {
 };
 
 const url = "https://api.rumanazainab.com/api/checkout/";
+// const url = "http://127.0.0.1:8000/api/checkout/";
 
 export const checkoutSlice = createSlice({
   name: "checkout",

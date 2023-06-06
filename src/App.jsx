@@ -1,7 +1,7 @@
 import "./App.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Route, Routes, BrowserRouter, useLocation } from "react-router-dom";
-import { About, Contact, Home, Shop, SingleProductPage } from "./pages";
+import { About, Contact, FAQPage, Home, Shop, SingleProductPage } from "./pages";
 import { Footer, Navbar, WhatsappBtn } from "./constants";
 import { Loading, PageNotFound } from "./utils";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,6 +31,7 @@ function App() {
           <Route exact path="/shop" element={<Shop />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/faq" element={<FAQPage />} />
           <Route
             exact
             path="/product/detail/:name"

@@ -1,11 +1,8 @@
 import { setProduct } from "../Redux/Reducers/cartSlice";
 
 const addProductToCart = (item, dispatch, product, toast) => {
-  const filteredProducts = product.filter((values) =>
-    Object.entries(item).every(([key, value]) => values[key] === value)
-  );
 
-  if (filteredProducts.length === 0) {
+  if (!product.includes(item)) {
     dispatch(setProduct(item));
     toast({
       title: `Product: ${item.title} Added to cart`,

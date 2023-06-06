@@ -21,10 +21,7 @@ const HeroProduct = ({ products }) => {
   const toast = useToast();
 
   return (
-    <Box pb={12} bg="gray.100">
-      <Heading as="h2" size="lg" mb={4}>
-        Most Popular Products
-      </Heading>
+    <Box pb={12}>
       <Flex wrap="wrap" justify="center" align="center" gap={10}>
         {products.map((product) => (
           <motion.div
@@ -33,7 +30,7 @@ const HeroProduct = ({ products }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <Box px={4} py={2} bg="white" boxShadow="lg" rounded="lg">
+            <Box px={4} py={2} bg="white" color='gray.900' boxShadow="lg" rounded="lg">
               <Box
                 bg={`url(${product.default_image.image})`}
                 bgSize="cover"

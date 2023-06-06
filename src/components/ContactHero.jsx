@@ -8,6 +8,7 @@ import {
   Input,
   Textarea,
   FormControl,
+  useColorModeValue,
   FormLabel,
   Icon,
 } from "@chakra-ui/react";
@@ -15,7 +16,7 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
 function ContactHero() {
   return (
-    <Box py={{ base: 6, lg: 12 }}>
+    <Box bg={useColorModeValue("gray.100", "gray.900")} py={{ base: 6, lg: 12 }}>
       <Heading
         as="h2"
         textAlign="center"
@@ -27,7 +28,7 @@ function ContactHero() {
       </Heading>
       <Flex
         direction={{ base: "column", lg: "row" }}
-        align="center"
+        // align="center"
         justify="center"
         maxW={{ base: "100%", lg: "80%", xl: "1200px" }}
         mx="auto"

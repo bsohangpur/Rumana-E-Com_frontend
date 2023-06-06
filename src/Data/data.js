@@ -1,111 +1,63 @@
-import {
-  pic_1,
-  pic_2,
-  pic_3,
-  pic_4,
-  pic_5,
-  pic_6,
-  pic_7,
-  pic_8,
-  pic_9,
-  pic_10,
-  pic_11,
-  pic_12,
-  pic_13,
-  pic_14,
-  pic_15,
-  pic_16,
-  pic_17,
-  pic_18,
-  pic_19,
-  pic_20,
-} from "../assets/photos";
-
-export const product = [
+const links = [
   {
-    id: 1,
-    title: "Special Gift Pack",
-    price: 15,
-    description: "Your perfect pack for everyday use.",
-    category: "candle",
-    image: pic_5,
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
+    name: "Shop",
+    url: "/shop",
   },
   {
-    id: 2,
-    title: "Decorate Lamp",
-    price: 20,
-    description: "Your perfect pack for everyday use.",
-    category: "candle",
-    image: pic_6,
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
+    name: "About",
+    url: "/about",
   },
   {
-    id: 3,
-    title: "Lamp Gift Pack",
-    price: 25,
-    description: "Your perfect pack for everyday use.",
-    category: "candle",
-    image: pic_17,
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
+    name: "Contact",
+    url: "/contact",
   },
   {
-    id: 4,
-    title: "Old Look Decorate Lamp",
-    price: 20,
-    description: "Your perfect pack for everyday use.",
-    category: "candle",
-    image: pic_1,
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
-  },
-  {
-    id: 5,
-    title: "Gift Pack",
-    price: 10,
-    description: "Your perfect pack for everyday use.",
-    category: "candle",
-    image: pic_3,
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
-  },
-
-  {
-    id: 6,
-    title: "Decorate leaf Lamp",
-    price: 15,
-    description: "Your perfect pack for everyday use.",
-    category: "candle",
-    image: pic_10,
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
-  },
-
-  {
-    id: 7,
-    title: "Gift Pack with lamp",
-    price: 25,
-    description: "Your perfect pack for everyday use.",
-    category: "candle",
-    image: pic_19,
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
+    name: "FAQ",
+    url: "/faq",
   },
 ];
+
+const faqData = [
+  {
+    question: "How can I place an order?",
+    answer: "To place an order, simply browse our website, select the desired products, and add them to your cart. Proceed to the checkout page, provide the necessary information, and complete the payment process. Once the order is confirmed, you will receive an email notification.",
+  },
+  {
+    question: "What payment methods do you accept?",
+    answer: "We accept various payment methods, including credit/debit cards (Visa, Mastercard, American Express), PayPal, and Google Pay. Choose the method that is most convenient for you during the checkout process.",
+  },
+  {
+    question: "What are your shipping options and rates?",
+    answer: "We offer different shipping options based on your location and the weight of the package. During checkout, you will see a list of available shipping methods and their corresponding rates. Please note that rates may vary depending on the destination and the selected shipping speed.",
+  },
+  {
+    question: "How long will it take to receive my order?",
+    answer: "The delivery time depends on your location and the shipping method chosen. Generally, orders are processed and shipped within 1-2 business days. You can find estimated delivery times during the checkout process, but please note that these are estimates and delays may occur due to unforeseen circumstances.",
+  },
+  {
+    question: "Do you offer international shipping?",
+    answer: "Yes, we offer international shipping to most countries. However, please note that customs regulations and import duties may apply, and customers are responsible for any additional fees or taxes imposed by their country's customs authority.",
+  },
+  {
+    question: "Can I track my order?",
+    answer: "Yes, once your order is shipped, you will receive a shipping confirmation email containing a tracking number. You can use this tracking number to monitor the progress of your delivery on our website or the courier's website.",
+  },
+  {
+    question: "What is your return and refund policy?",
+    answer: "We have a flexible return and refund policy. If you're not satisfied with your purchase, you can initiate a return within 14 days of receiving the item. Please refer to our Returns & Refunds page for detailed instructions on how to proceed.",
+  },
+  {
+    question: "Are gift-wrapping services available?",
+    answer: "Yes, we offer gift-wrapping services for selected items. During the checkout process, you will have the option to add gift-wrapping to your order. Additional charges may apply.",
+  },
+  {
+    question: "How can I contact your customer support?",
+    answer: "You can reach our customer support team by visiting the 'Contact Us' page on our website. We provide a contact form where you can fill in your details and submit your inquiry. Our team will get back to you as soon as possible.",
+  },
+  {
+    question: "Are there any promotions or discounts available?",
+    answer: "We occasionally run promotions and offer discounts on selected products. To stay updated, you can subscribe to our newsletter or follow us on social media. We also have a 'Sale' section on our website where you can find discounted items.",
+  },
+];
+
+export { links, faqData };
