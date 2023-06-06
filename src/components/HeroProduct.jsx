@@ -11,37 +11,14 @@ import {
 import { motion } from "framer-motion";
 import { AiOutlineShoppingCart, AiOutlineInfoCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { setProduct } from "../Redux/Reducers/cartSlice";
+import addProductToCart from "./addProductToCart";
+
+import { Link } from "react-router-dom";
 
 const HeroProduct = ({ products }) => {
   const dispatch = useDispatch();
-  const { product } = useSelector((state) => state.cart);
+  const { product: item } = useSelector((state) => state.cart);
   const toast = useToast();
-
-  const addProductToCart = (item) => {
-    const filteredProducts = product.filter((values) =>
-      Object.entries(item).every(([key, value]) => values[key] === value)
-    );
-
-    if (filteredProducts.length === 0) {
-      dispatch(setProduct(item));
-      toast({
-        title: `Product: ${item.title} Added to cart`,
-        description: "You can checkout product in your cart",
-        status: "success",
-        position: "top-left",
-        duration: 3000,
-      });
-    } else {
-      toast({
-        title: "Product is already in your cart",
-        description: "You can checkout product in your cart",
-        status: "warning",
-        position: "top-left",
-        duration: 3000,
-      });
-    }
-  };
 
   return (
     <Box pb={12} bg="gray.100">
@@ -58,7 +35,7 @@ const HeroProduct = ({ products }) => {
           >
             <Box px={4} py={2} bg="white" boxShadow="lg" rounded="lg">
               <Box
-                bg={`url(${product.default_image.image.image})`}
+                bg={`url(${product.default_image.image})`}
                 bgSize="cover"
                 bgPosition="center"
                 bgRepeat="no-repeat"
@@ -79,9 +56,13 @@ const HeroProduct = ({ products }) => {
                   variant="outline"
                   mt={4}
                   mr={2}
-                  onClick={() => addProductToCart(product)}
+                  onClick={() =>
+                    addProductToCart(product, dispatch, item, toast)
+                  }
                 />
                 <IconButton
+                  as={Link}
+                  to={`/product/detail/${product.title}`}
                   icon={<AiOutlineInfoCircle size={25} />}
                   colorScheme="blue"
                   variant="outline"

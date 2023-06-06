@@ -13,55 +13,32 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { useDispatch, useSelector } from "react-redux";
-import { setProduct } from "../Redux/Reducers/cartSlice";
+import addProductToCart from './addProductToCart'
 
 export default function ProductDetail({ product }) {
   const dispatch = useDispatch();
   const { product: productData } = useSelector((state) => state.cart);
   const toast = useToast();
 
-  const addProductToCart = (item) => {
-    const filteredProducts = productData.filter((values) =>
-      Object.entries(item).every(([key, value]) => values[key] === value)
-    );
-
-    if (filteredProducts.length === 0) {
-      dispatch(setProduct(item));
-      toast({
-        title: `Product: ${item.title} Added to cart`,
-        description: "You can checkout product in your cart",
-        status: "success",
-        position: "top-left",
-        duration: 3000,
-      });
-    } else {
-      toast({
-        title: "Product is already in your cart",
-        description: "You can checkout product in your cart",
-        status: "warning",
-        position: "top-left",
-        duration: 3000,
-      });
-    }
-  };
-
   return (
     <Box display="flex" justifyContent="center" alignItems="center">
       <Box w="80%">
-        <Flex justify="space-evenly" align="center">
+        <Flex justify="space-evenly" flexWrap="wrap" align="center">
           <Box className="h-fit">
-            {/* <Swiper pagination={true} modules={[Pagination]} className="w-96">
-              {product.images.map((image, index) => (
-                <SwiperSlide className="w-96" key={index}>
-                  <Image src={image} alt={product.name} />
-                </SwiperSlide>
-              ))}
-            </Swiper> */}
+            <Swiper pagination={true} modules={[Pagination]} className="w-96">
+              {product &&
+                product.image &&
+                product.image.map((image, index) => (
+                  <SwiperSlide className="w-96 h-96" key={index}>
+                    <Image src={image.image} alt={product.name} />
+                  </SwiperSlide>
+                ))}
+            </Swiper>
           </Box>
           <Box>
             <Box mt={4}>
               <Heading as="h1" size="xl">
-                {product.name}
+                {product.title}
               </Heading>
               <Text mt={2}>{product.description}</Text>
               <Text mt={2} fontWeight="bold">
@@ -76,7 +53,9 @@ export default function ProductDetail({ product }) {
         </Flex>
         <ButtonGroup my={12} display="flex" justifyContent="center">
           <Button
-            onClick={() => addProductToCart(product)}
+            onClick={() =>
+              addProductToCart(product, dispatch, productData, toast)
+            }
             variant="solid"
             colorScheme="teal"
             w="80%"

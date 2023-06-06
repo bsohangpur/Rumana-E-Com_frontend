@@ -6,7 +6,7 @@ import {
   Image,
   Menu,
   MenuButton,
-  IconButton,
+  Icon,
   MenuList,
   MenuItem,
 } from "@chakra-ui/react";
@@ -22,22 +22,22 @@ const Cart = ({ items }) => {
   const dispatch = useDispatch();
 
   const handleCheckoutClick = () => {
-    dispatch(setHandleClick(true))
+    dispatch(setHandleClick(true));
     navigate("/checkout");
   };
 
   return (
     <Menu>
-      <MenuButton>
-        <IconButton
+      <MenuButton
           aria-label="Open shopping cart"
           as={Button}
-          icon={<FiShoppingCart />}
           mr={1}
           variant="ghost"
           colorScheme="orange"
           size="sm"
-        />
+          className=" border "
+        >
+           <Icon mr={2} as={FiShoppingCart}/>
         ({items.length})
       </MenuButton>
 
@@ -53,7 +53,7 @@ const Cart = ({ items }) => {
             >
               <MenuItem>
                 <Image
-                  src={item.image}
+                  src={item.default_image.image}
                   alt={item.title}
                   boxSize="2rem"
                   mr={2}
@@ -66,10 +66,7 @@ const Cart = ({ items }) => {
             </motion.div>
           ))}
         </AnimatePresence>
-        <MenuItem
-          onClick={handleCheckoutClick}
-          isDisabled={!items.length}
-        >
+        <MenuItem onClick={handleCheckoutClick} isDisabled={!items.length}>
           Checkout
         </MenuItem>
       </MenuList>

@@ -9,8 +9,6 @@ import { useSelector } from "react-redux";
 
 const SingleProductContainer = ({ product }) => {
 
-  console.log(product)
-
   return (
     <Box minH="100vh" p={4}>
       <motion.div

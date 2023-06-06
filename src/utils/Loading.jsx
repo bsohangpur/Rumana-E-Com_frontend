@@ -1,15 +1,15 @@
 import React from 'react'
-import CircleLoader from "react-spinners/CircleLoader";
+import {SyncLoader} from "react-spinners";
 
 const Loading = () => {
   return (
     <div className='w-full h-screen flex justify-center items-center'>
-    <CircleLoader
-        color="rgba(71, 162, 162, 0.95)"
+    <SyncLoader
+        color="rgb(20 83 45)"
         cssOverride={{}}
         loading
-        size={100}
-        speedMultiplier={1}
+        size={15}
+        speedMultiplier={0.5}
     />
 </div>
   )

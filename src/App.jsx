@@ -33,7 +33,7 @@ function App() {
           <Route exact path="/contact" element={<Contact />} />
           <Route
             exact
-            path="/shop/product/:name"
+            path="/product/detail/:name"
             element={<SingleProductPage />}
           />
           <Route

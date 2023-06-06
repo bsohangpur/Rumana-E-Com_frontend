@@ -2,19 +2,24 @@ import React, { useEffect } from "react";
 import { Box } from "@chakra-ui/react";
 import { SingleProductContainer } from "../containers";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSingleProduct } from "../Redux/Reducers/productSlice";
+import { FetchSingleProduct } from "../Redux/Reducers/productSlice";
 import { useParams } from "react-router-dom";
-import { Loading } from "../utils";
+import { Loading, PageNotFound } from "../utils";
 
 const SingleProductPage = () => {
   const dispatch = useDispatch();
-  const { product, loading } = useSelector((state) => state.product);
+  const { product, loading, error } = useSelector((state) => state.product);
   const param = useParams();
 
   useEffect(() => {
-    dispatch(fetchSingleProduct(param.name));
-  }, [param.name]);
+    dispatch(FetchSingleProduct(param.name));
+  }, []);
 
+  if (loading) {
+    return <Loading />;
+  } else if (error) {
+    return <PageNotFound />;
+  }
 
   return (
     <Box>
